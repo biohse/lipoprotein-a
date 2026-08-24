@@ -1,0 +1,5 @@
+_target_: sklearn.compose.ColumnTransformer
+transformers:
+  - [continuous, {_target_: sklearn.preprocessing.StandardScaler}, [Age, HDL, LDL, TG, TC]]
+  - [gender, passthrough, [Gender]]
+verbose_feature_names_out: false

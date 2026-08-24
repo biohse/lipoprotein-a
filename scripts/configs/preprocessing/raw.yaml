@@ -1,0 +1,2 @@
+_target_: sklearn.preprocessing.FunctionTransformer
+feature_names_out: one-to-one

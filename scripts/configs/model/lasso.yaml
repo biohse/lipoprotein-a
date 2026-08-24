@@ -1,0 +1,15 @@
+defaults:
+  - /preprocessing@_global_.preprocessing: scaled
+  - _self_
+
+name: lasso
+task: regression
+standardize_target: true
+target_transforms: [identity, log1p]
+estimator:
+  _target_: sklearn.linear_model.Lasso
+  max_iter: 10000
+  selection: cyclic
+  random_state: ${seed}
+param_grid:
+  regressor__model__alpha: [0.001, 0.01, 0.1, 1.0, 10.0]

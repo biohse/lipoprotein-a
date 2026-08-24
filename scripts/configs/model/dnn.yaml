@@ -1,0 +1,21 @@
+defaults:
+  - /preprocessing@_global_.preprocessing: scaled
+  - _self_
+
+name: dnn
+task: classification
+backend: dnn
+environment:
+  CUDA_VISIBLE_DEVICES: "-1"
+  KERAS_BACKEND: tensorflow
+  TF_DETERMINISTIC_OPS: "1"
+  TF_ENABLE_ONEDNN_OPTS: "0"
+  TF_NUM_INTEROP_THREADS: "1"
+  TF_NUM_INTRAOP_THREADS: "1"
+class_weights: [null, balanced]
+learning_rate: 0.001
+batch_size: 1000
+max_epochs: 300
+validation_size: 0.10
+patience: 20
+min_delta: 0.0001

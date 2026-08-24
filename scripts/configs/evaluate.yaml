@@ -1,0 +1,21 @@
+defaults:
+  - cohort: mass_f1
+  - _self_
+  - override hydra/job_logging: stdout
+
+predictions_dir: results/predictions/${cohort.name}
+output_dir: results/evaluation/${cohort.name}
+min_specificity: 0.90
+bootstrap_replicates: 10000
+bootstrap_seed: 42
+
+expected_models:
+  regression: [linear, quadratic, lasso, rf_regressor, svr, pysr]
+  classification: [logistic, rf_classifier, svc, xgboost, dnn, h2o_automl, lightautoml]
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

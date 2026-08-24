@@ -1,0 +1,16 @@
+.venv/
+*.egg-info/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.pyright/
+*.log
+
+outputs/
+
+data/raw/*
+!data/raw/.gitkeep
+data/splits/*
+!data/splits/.gitkeep
+results/*
+!results/.gitkeep

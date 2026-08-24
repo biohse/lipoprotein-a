@@ -1,0 +1,4 @@
+name: molar_p2
+data_path: data/raw/Table S4.xlsx
+split_path: data/splits/molar_p2.csv
+cutoffs: [75, 125, 150]

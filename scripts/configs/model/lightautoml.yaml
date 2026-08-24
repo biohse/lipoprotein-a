@@ -1,0 +1,44 @@
+name: lightautoml
+task: classification
+backend: lightautoml
+metric: auc
+timeout: 86400
+memory_limit: 8
+cpu_limit: 1
+gpu_ids: ""
+debug: true
+verbose: 3
+timing_params:
+  mode: 2
+general_params:
+  use_algos: [[linear_l2, lgb, lgb_tuned, cb, cb_tuned]]
+  nested_cv: false
+  return_all_predictions: false
+reader_params:
+  cv: 5
+  random_state: ${seed}
+  n_jobs: ${model.cpu_limit}
+  advanced_roles: false
+tuning_params:
+  fit_on_holdout: true
+  max_tuning_iter: 25
+  max_tuning_time: 86400
+selection_params:
+  mode: 0
+lgb_params:
+  default_params:
+    deterministic: true
+    force_col_wise: true
+    num_threads: ${model.cpu_limit}
+    seed: ${seed}
+    feature_fraction_seed: ${seed}
+    bagging_seed: ${seed}
+    data_random_seed: ${seed}
+  freeze_defaults: false
+cb_params:
+  default_params:
+    task_type: CPU
+    thread_count: ${model.cpu_limit}
+    random_seed: ${seed}
+    allow_writing_files: false
+  freeze_defaults: false

@@ -1,0 +1,13 @@
+defaults:
+  - cohort: mass_f1
+  - _self_
+  - override hydra/job_logging: stdout
+
+seed: 42
+
+hydra:
+  run:
+    dir: .
+  output_subdir: null
+  job:
+    chdir: false

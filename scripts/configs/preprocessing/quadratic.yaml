@@ -1,0 +1,11 @@
+_target_: sklearn.compose.ColumnTransformer
+transformers:
+  - - lipids
+    - _target_: sklearn.pipeline.Pipeline
+      steps:
+        - [scale, {_target_: sklearn.preprocessing.StandardScaler}]
+        - [quadratic, {_target_: lpa.preprocessing.QuadraticFeatures, include_pairwise: false}]
+    - [HDL, LDL, TG, TC]
+  - [age, {_target_: sklearn.preprocessing.StandardScaler}, [Age]]
+  - [gender, passthrough, [Gender]]
+verbose_feature_names_out: false

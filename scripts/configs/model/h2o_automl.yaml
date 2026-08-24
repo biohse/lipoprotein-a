@@ -1,0 +1,12 @@
+name: h2o_automl
+task: classification
+backend: h2o
+nthreads: 1
+max_mem_size: 4G
+nfolds: 5
+max_models: 20
+max_runtime_secs: 0
+max_runtime_secs_per_model: 0
+metric: AUC
+balance_classes: false
+include_algos: [GLM, DRF, GBM, XGBoost, StackedEnsemble]

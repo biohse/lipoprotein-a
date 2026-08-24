@@ -1,0 +1,17 @@
+defaults:
+  - /preprocessing@_global_.preprocessing: scaled
+  - _self_
+
+name: svc
+task: classification
+estimator:
+  _target_: sklearn.svm.SVC
+  cache_size: 512
+param_grid:
+  - model__kernel: [linear]
+    model__C: [1.0, 10.0, 100.0]
+    model__class_weight: [null, balanced]
+  - model__kernel: [rbf]
+    model__C: [1.0, 10.0, 100.0]
+    model__class_weight: [null, balanced]
+    model__gamma: [scale]

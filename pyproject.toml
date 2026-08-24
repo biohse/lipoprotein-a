@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling==1.32.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lpa"
+version = "0.1.0"
+description = "Reproducible machine-learning analysis of elevated lipoprotein(a)"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "hydra-core==1.3.5",
+    "joblib==1.5.3",
+    "numpy==1.26.4",
+    "openpyxl==3.1.5",
+    "pandas==2.3.3",
+    "scikit-learn==1.9.0",
+    "scipy==1.15.3",
+]
+
+[project.optional-dependencies]
+dnn = [
+    "keras==3.15.1",
+    "tensorflow==2.21.0",
+]
+h2o = ["h2o==3.46.0.11"]
+lightautoml = [
+    "catboost==1.2.10",
+    "lightautoml==0.4.2",
+    "lightgbm==4.7.0",
+    "optuna==4.9.0",
+    "torch==2.13.0",
+    "xgboost==2.1.4",
+]
+pysr = ["pysr==1.5.10"]
+xgboost = ["xgboost==2.1.4"]
+
+[dependency-groups]
+dev = [
+    "pyright==1.1.411",
+    "pytest==9.1.1",
+    "ruff==0.16.4",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lpa"]
+
+[tool.pyright]
+include = ["src", "scripts", "tests"]
+pythonVersion = "3.12"
+typeCheckingMode = "standard"
+venv = ".venv"
+venvPath = "."
+
+[tool.pytest.ini_options]
+addopts = "-q -m 'not integration'"
+testpaths = ["tests"]
+markers = ["integration: requires an optional model backend"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"

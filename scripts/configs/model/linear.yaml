@@ -1,0 +1,11 @@
+defaults:
+  - /preprocessing@_global_.preprocessing: scaled
+  - _self_
+
+name: linear
+task: regression
+standardize_target: false
+target_transforms: [identity, log1p]
+estimator:
+  _target_: sklearn.linear_model.LinearRegression
+param_grid: {}

@@ -1,0 +1,18 @@
+defaults:
+  - /preprocessing@_global_.preprocessing: scaled
+  - _self_
+
+name: svr
+task: regression
+standardize_target: true
+target_transforms: [identity, log1p]
+estimator:
+  _target_: sklearn.svm.SVR
+param_grid:
+  - regressor__model__kernel: [linear]
+    regressor__model__C: [0.1, 0.5, 1.0, 10.0, 100.0]
+    regressor__model__epsilon: [0.1, 0.5, 1.0]
+  - regressor__model__kernel: [rbf]
+    regressor__model__C: [0.1, 0.5, 1.0, 10.0, 100.0]
+    regressor__model__epsilon: [0.1, 0.5, 1.0]
+    regressor__model__gamma: [scale]

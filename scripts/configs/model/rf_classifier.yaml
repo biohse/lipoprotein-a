@@ -1,0 +1,14 @@
+defaults:
+  - /preprocessing@_global_.preprocessing: raw
+  - _self_
+
+name: rf_classifier
+task: classification
+estimator:
+  _target_: sklearn.ensemble.RandomForestClassifier
+  random_state: ${seed}
+  n_jobs: 1
+param_grid:
+  model__n_estimators: [50, 100, 500, 1000]
+  model__max_features: [1, 5, 1.0]
+  model__class_weight: [null, balanced]

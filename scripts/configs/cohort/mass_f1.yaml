@@ -1,0 +1,4 @@
+name: mass_f1
+data_path: data/raw/Table S2.xlsx
+split_path: data/splits/mass_f1.csv
+cutoffs: [30, 50, 70]

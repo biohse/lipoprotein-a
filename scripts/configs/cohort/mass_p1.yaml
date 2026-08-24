@@ -1,0 +1,4 @@
+name: mass_p1
+data_path: data/raw/Table S3.xlsx
+split_path: data/splits/mass_p1.csv
+cutoffs: [30, 50, 70]

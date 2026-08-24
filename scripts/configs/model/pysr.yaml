@@ -1,0 +1,28 @@
+name: pysr
+task: regression
+backend: pysr
+target_transforms: [identity, log1p]
+estimator:
+  _target_: pysr.PySRRegressor
+  niterations: 200
+  populations: 31
+  population_size: 27
+  ncycles_per_iteration: 380
+  batching: true
+  batch_size: 5000
+  binary_operators: [+, '-', '*', /]
+  unary_operators: [square, cube]
+  elementwise_loss: loss(x, y) = (x - y)^2
+  complexity_of_operators:
+    square: 1.5
+    cube: 2.0
+  maxsize: 20
+  model_selection: best
+  precision: 32
+  deterministic: true
+  parallelism: serial
+  warm_start: false
+  update: false
+  progress: false
+  verbosity: 0
+  input_stream: devnull

@@ -1,0 +1,15 @@
+defaults:
+  - /preprocessing@_global_.preprocessing: scaled
+  - _self_
+
+name: logistic
+task: classification
+estimator:
+  _target_: sklearn.linear_model.LogisticRegression
+  l1_ratio: 0.0
+  solver: lbfgs
+  max_iter: 2000
+  random_state: ${seed}
+param_grid:
+  model__C: [0.1, 1.0, 10.0]
+  model__class_weight: [null, balanced]

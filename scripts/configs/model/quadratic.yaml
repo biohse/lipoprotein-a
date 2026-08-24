@@ -1,0 +1,12 @@
+defaults:
+  - /preprocessing@_global_.preprocessing: quadratic
+  - _self_
+
+name: quadratic
+task: regression
+standardize_target: false
+target_transforms: [identity, log1p]
+estimator:
+  _target_: sklearn.linear_model.LinearRegression
+param_grid:
+  regressor__preprocess__lipids__quadratic__include_pairwise: [false, true]
