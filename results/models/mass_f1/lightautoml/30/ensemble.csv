@@ -1,0 +1,5 @@
+level,model,fold_models,weight
+1,Lvl_0_Pipe_0_Mod_0_LinearL2,5,0.5998740792274475
+1,Lvl_0_Pipe_1_Mod_0_LightGBM,5,0.24486437439918518
+1,Lvl_0_Pipe_1_Mod_1_Tuned_LightGBM,5,0.07000689953565598
+1,Lvl_0_Pipe_1_Mod_2_CatBoost,5,0.08525461703538895

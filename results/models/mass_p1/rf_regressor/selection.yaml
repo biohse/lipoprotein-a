@@ -1,0 +1,5 @@
+target_transform: log1p
+best_params:
+  regressor__model__max_features: 1
+  regressor__model__n_estimators: 1000
+cv_neg_mae: -21.931958709661938

@@ -1,0 +1,4 @@
+leader: GLM_1_AutoML_2_20260824_114335
+model_family: GLM
+cv_roc_auc: 0.6338152036174952
+oof_model: GLM_1_AutoML_2_20260824_114335

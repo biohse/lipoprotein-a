@@ -1,0 +1,4 @@
+leader: StackedEnsemble_BestOfFamily_1_AutoML_1_20260824_112356
+model_family: StackedEnsemble
+cv_roc_auc: 0.5628133875481643
+oof_model: XGBoost_grid_1_AutoML_1_20260824_112356_model_4

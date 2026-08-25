@@ -1,0 +1,6 @@
+best_params:
+  model__C: 1.0
+  model__class_weight: balanced
+  model__gamma: scale
+  model__kernel: rbf
+cv_roc_auc: 0.6124421491717876

@@ -1,0 +1,6 @@
+best_params:
+  model__learning_rate: 0.01
+  model__max_depth: 5
+  model__n_estimators: 200
+  model__scale_pos_weight: 1.0
+cv_roc_auc: 0.602318935559149

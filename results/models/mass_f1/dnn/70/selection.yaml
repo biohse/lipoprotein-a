@@ -1,0 +1,2 @@
+class_weight: balanced
+best_epoch: 30

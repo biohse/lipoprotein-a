@@ -1,0 +1,5 @@
+best_params:
+  model__class_weight: balanced
+  model__max_features: 1.0
+  model__n_estimators: 100
+cv_roc_auc: 0.5836974059716586

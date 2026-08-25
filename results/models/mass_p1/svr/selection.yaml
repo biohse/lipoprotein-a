@@ -1,0 +1,7 @@
+target_transform: log1p
+best_params:
+  regressor__model__C: 0.1
+  regressor__model__epsilon: 0.1
+  regressor__model__gamma: scale
+  regressor__model__kernel: rbf
+cv_neg_mae: -21.27412361107116

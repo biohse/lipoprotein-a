@@ -1,0 +1,5 @@
+target_transform: log1p
+cv_neg_mae: -21.654912560589484
+run_id: 20260824_115242_zZWGzi
+run_directory: searches/20260824_115242_zZWGzi
+checkpoint: searches/20260824_115242_zZWGzi/checkpoint.pkl

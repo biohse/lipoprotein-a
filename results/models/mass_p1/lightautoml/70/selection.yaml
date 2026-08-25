@@ -1,0 +1,3 @@
+cv_roc_auc: 0.605956000106902
+ensemble_size: 2
+tuning_trials: 50

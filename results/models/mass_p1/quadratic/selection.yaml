@@ -1,0 +1,4 @@
+target_transform: log1p
+best_params:
+  regressor__preprocess__lipids__quadratic__include_pairwise: true
+cv_neg_mae: -21.617889766552388
